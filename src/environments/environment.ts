@@ -6,16 +6,16 @@
 export const environment = {
   production: false,
   version: "2021.0",//No cambiar a menos que se cree un nuevo proyecto
-  secret_key: "dff5091000396f57ed039129a4e5472b",
-  iv: "JSyC2d1SfTArQL9fbTA25A==",
-  jamaradmin_key: "G0DFOPNx5yIVCXHFbcTA14c6uWmusi",
-  api_key: 'd47c29cfdf8e2456ac678c51f9e4ddfa8ec577f64e98aa9e863399f6a10210d4',
+  secret_key: "123456",
+  iv: "123456",
+  jamaradmin_key: "123456",
+  api_key: '123456',
 
   environment: "development",
   adminRoute: "admin",
   authRoute: "auth",
-  domain: "https://appsdev.mueblesjamar.com.co",
-  domainBasics: "https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/v1/{{c_emp}}/jamaradmin/basics/",
+  domain: "",
+  domainBasics: "",
   // domains: {
   //   STEP_IMAGE_APP_ID: 'https://6kwvv4d820.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
   //   SELLER_APP_ID: 'https://sbeuw1vi17.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
@@ -55,10 +55,7 @@ export const environment = {
    * Utilizar solo en caso que el dominio sea distinto del actual, ya que es allowed por defecto.
    */
   allowedDomains: [
-    "https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/v1/JA",
-    "https://ot92hx6vv3.execute-api.us-east-1.amazonaws.com/prd/v1/JA",
-    "https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/v1/JP",
-    "https://ot92hx6vv3.execute-api.us-east-1.amazonaws.com/prd/v1/JP",
+    "",
   ],
   /**
    * Rutas en las que no se tendrá en cuenta el envío del token.

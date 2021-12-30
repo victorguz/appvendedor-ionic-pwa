@@ -4,17 +4,33 @@
 
 
 export const environment = {
-  production: true,
+  production: false,
   version: "2021.0",//No cambiar a menos que se cree un nuevo proyecto
-  secret_key: "dff5091000396f57ed039129a4e5472b",
-  iv: "JSyC2d1SfTArQL9fbTA25A==",
-  jamaradmin_key: "G0DFOPNx5yIVCXHFbcTA14c6uWmusi",
-  api_key: 'd47c29cfdf8e2456ac678c51f9e4ddfa8ec577f64e98aa9e863399f6a10210d4',
+  secret_key: "123456",
+  iv: "123456",
+  jamaradmin_key: "123456",
+  api_key: '123456',
+
   environment: "qas",
   adminRoute: "admin",
   authRoute: "auth",
-  domain: "https://appsqas.mueblesjamar.com.co",
-  domainBasics: "https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/v1/{{c_emp}}/jamaradmin/basics/",
+  domain: "",
+  domainBasics: "",
+  // domains: {
+  //   STEP_IMAGE_APP_ID: 'https://6kwvv4d820.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   SELLER_APP_ID: 'https://sbeuw1vi17.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   TARJETIZACION_ID: 'https://uoc9e528ik.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   WEB_LOGIC_APP_ID: 'https://ihoffgzow6.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   MEC_EXTENSION_APP_ID: 'https://3xassuir58.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   ORDER_APP_ID: 'https://gm36tm91y3.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   ORDER_REQUEST_ID: 'https://xvjhk5jhn4.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   DIGITURNO_MIDDLEWARE: 'https://ffmph7erj5.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   AGENCIA_TURNO: 'https://1ovflrau72.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   CITA_FUTURA: 'https://uljva3ijt7.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   MEC_EXTENSION_COMVE: 'https://rtsycwvb4g.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  //   MALLAGRAMA_TEMPORAL: 'https://rtsycwvb4g.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
+  // },
+
   encryptLocalStorage: false,
   //urls basicas necesarias para el buen funcionamiento del framework
   urls: {
@@ -27,7 +43,6 @@ export const environment = {
     },
     generals: { value: "/UtilitiesService/api/utilities/getProperties", method: "GET", contentType: "application/x-www-form-urlencoded" },
     query: {
-      SQL: { value: "query/sql/post", method: "POST", contentType: "application/json" },
       Select: { value: "query/select/post", method: "POST", contentType: "application/json" },
       SelectQuery: { value: "query/select/sql/post", method: "POST", contentType: "application/json" },
       Insert: { value: "query/insert/post", method: "POST", contentType: "application/json" },
@@ -40,31 +55,29 @@ export const environment = {
    * Utilizar solo en caso que el dominio sea distinto del actual, ya que es allowed por defecto.
    */
   allowedDomains: [
-    "https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/",
-    "https://ot92hx6vv3.execute-api.us-east-1.amazonaws.com/prd/"
+    "",
   ],
-  
   /**
    * Rutas en las que no se tendrá en cuenta el envío del token.
    * Pueden ser del mismo dominio.
    */
   disallowedRoutes: [],
   //Constants
-  COOKIE_USER: "asdsdd", //nombre de la cookie donde se almacena la informacion del usuario
+  COOKIE_USER: "user_info", //nombre de la cookie donde se almacena la informacion del usuario
   COOKIE_USERK: "jsfb_assff", //nombre de la cookie donde se almacena la informacion del usuario
   COOKIE_USER_SESSIONS: "jsfb_NMassff", //nombre de la cookie donde se almacena la informacion del usuario
   MAX_USER_SESSIONS: "max_jsfb_NMassff", //nombre de la cookie donde se almacena la informacion del usuario
-  COOKIE_TOKEN: "rtytry", //nombre de la cookie donde se almacena el token de la sesión
-  LOCAL_CONNECTION: "ghjghj", //conexión del app
-  LOCAL_ENDPOINTS: "asdvbb", //nombre de la cookie donde se almacenan los endpoints
-  LOCAL_MODULES: "rtryyrt", //modulos donde tiene acceso el usuario
-  LOCAL_MODULE_OPTIONS: "xcvzx", //Opciones del menu del modulo activo
-  LOCAL_CURRENT_MODULE: "sad5", //modulo activo (donde el usuario hizo click)
-  LOCAL_ROLES: "asdssvxcv", //roles --> DEPRECATED
-  LOCAL_RECENT_MODULES: "cvbcvbn", //Lista de modulos recientes
-  LOCAL_LAST_URL: "aweeads", //Ultima url visitada antes de expirar sesión
-  LOCAL_GENERALS: "adzxcxzv", //generals.json
-  LOCAL_PROPERTIES: "awdasddf", //ser properties
+  COOKIE_TOKEN: "token", //nombre de la cookie donde se almacena el token de la sesión
+  LOCAL_CONNECTION: "con",
+  LOCAL_ENDPOINTS: "endpoints", //nombre de la cookie donde se almacenan los endpoints
+  LOCAL_MODULES: "modulos",
+  LOCAL_MODULE_OPTIONS: "module_options",
+  LOCAL_CURRENT_MODULE: "current_options",
+  LOCAL_ROLES: "roles",
+  LOCAL_RECENT_MODULES: "recent_modules",
+  LOCAL_LAST_URL: "last_url",
+  LOCAL_GENERALS: "generals",
+  LOCAL_PROPERTIES: "properties",
   MESSAGES_DURATION: 5000, //Duracion de los mensajes de snackbar
 };
 
