@@ -1,0 +1,12 @@
+<article>
+  <ion-toolbar>
+    <ion-title [color]="color">{{title}}</ion-title>
+  </ion-toolbar>
+  <div [innerHTML]="message"> </div>
+  <ion-buttons>
+    <ion-button *ngFor="let item of buttons">
+      <ion-icon name="musical-note" [slot]="item.side?item.side:'start'"></ion-icon>
+      {{item.text}}
+    </ion-button>
+  </ion-buttons>
+</article>

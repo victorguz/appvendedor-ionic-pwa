@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-text>
+    <strong>Carrito</strong>
+  </ion-text>
+  <section class="products">
+    <!-- <app-product [item]="item" *ngFor="let item of products" type="cart"></app-product> -->
+
+    <ion-item class="w-100">
+      <ion-label>Cuotas</ion-label>
+      <ion-select placeholder="Seleccione" multiple="true" class="w-100">
+        <ion-select-option [value]="item" *ngFor="let item of cuotas">{{item}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="w-100">
+      <ion-label>Convenio</ion-label>
+      <ion-select placeholder="Seleccione" class="w-100">
+        <ion-select-option [value]="item" *ngFor="let item of convenios">{{item}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="w-100">
+      <ion-label>Cuota inicial</ion-label>
+      <ion-input type="number" inputmode="numeric">
+      </ion-input>
+      <ion-icon name="cash-outline" slot="end" class="ion-align-self-center"></ion-icon>
+    </ion-item>
+
+    <ion-item class="w-100">
+      <ion-label>Venta a nómina</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+
+    <ion-item class="w-100">
+      <ion-label>Facturas unidas</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+
+    <ion-item class="w-100">
+      <ion-label>Cliente se lo lleva</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+
+    <ion-item class="w-100">
+      <ion-label>Entrega en edificio</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+
+    <ion-item class="w-100">
+      <ion-label>Plan T</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+
+    <article class="summary" #summary (click)="summary.hidden=true; summary2.hidden=false;">
+      <strong>
+        <span>Resumen:</span>
+        <span>${{getTotal("normal")|kiloFormater}} Otro medio</span>
+      </strong>
+      <strong>
+        <span class="w-100 text-end">${{getTotal("promo")|kiloFormater}} con <ion-text color="secondary">CrediJamar
+          </ion-text>
+        </span>
+      </strong>
+    </article>
+
+    <article class="summary summary2" #summary2 hidden="true" (click)="summary.hidden=true; summary.hidden=false;">
+      <strong>
+        <span>Total:</span>
+        <span>{{getTotal("normal")|currency}} Otro medio</span>
+      </strong>
+      <strong>
+        <span class="w-100 text-end">
+          {{getTotal("promo")|currency}} con <ion-text color="secondary">CrediJamar</ion-text>
+        </span>
+      </strong>
+    </article>
+
+  </section>
+
+  <ion-row class="row-section">
+    <ion-col size="6">
+      <ion-button color="secondary" fill="solid" size="large" expand="block" [routerLink]="['/admin/products']">
+        Añadir más
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="primary" fill="solid" size="large" expand="block" [routerLink]="['/admin/forms']">
+        Siguiente
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

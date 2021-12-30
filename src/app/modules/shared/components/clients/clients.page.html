@@ -1,0 +1,60 @@
+<app-header title="Clientes" [menu]="!isModal" [notifications]="false" [back]="isModal" [add]="true" [onAdd]="onAdd"
+  [onBack]="onBack">
+</app-header>
+<ion-content [class]="class">
+
+  <section>
+    <ion-item>
+      <ion-input placeholder="Buscar un cliente"></ion-input>
+      <ion-icon name="search-outline" slot="end" class="ion-align-self-center"></ion-icon>
+    </ion-item>
+  </section>
+
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button [fill]="type==item?'solid':'outline'" [color]="type==item?'primary':'medium'"
+        class="ion-text-uppercase" (click)="setType(item)" *ngFor="let item of types">
+        {{item}}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <section>
+    <ion-text>{{clients.length}} clientes en memoria</ion-text>
+  </section>
+
+  <ion-item-sliding *ngFor="let client of clients" (ionDrag)="onSlideClient($event)">
+    <ion-item>
+      <section class="item">
+        <div class="circle ion-text-uppercase">{{client.name|slice:0:1}}</div>
+        <div class="text">
+          <ion-label class="name" color="dark">{{client.name}}</ion-label>
+          <small class="description text-muted" *ngIf="client.products.length>0">
+            {{sumarPrecio(client.products)}} a {{sumarOferta(client.products)}} -
+            Cuotas:
+            {{client.cuotas.join(',')}}
+          </small>
+          <small class="description text-muted" *ngIf="client.products.length==0">
+            Sin productos
+          </small>
+        </div>
+        <div class="count">{{client.products.length}}</div>
+      </section>
+    </ion-item>
+
+    <ion-item-options side="start">
+      <ion-item-option color="primary" (click)="onBack($event)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+    <ion-item-options side="end">
+      <ion-item-option (click)="onBack($event)" color="secondary">
+        <span *ngIf="type=='clientes'">Cotizar</span>
+        <span *ngIf="['cotizaciones','visor'].includes(type)">OP</span>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+
+</ion-content>

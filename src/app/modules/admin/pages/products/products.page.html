@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<ion-content>
+  <section>
+    <ion-item>
+      <ion-input placeholder="Buscar producto" (keyup)="search = inputSearch.value.toString()" #inputSearch></ion-input>
+      <ion-icon name="search-outline" slot="end" class="ion-align-self-center"></ion-icon>
+    </ion-item>
+  </section>
+
+  <ng-container *ngIf="!search">
+    <div class="categories">
+      <div *ngFor="let item of categories" class="category">
+        <ion-button fill="solid" (click)="setCategory(item.type)" color="secondary">
+          <img [src]="item.image" [alt]="item.name">
+        </ion-button>
+        <span>{{(item.name?item.name:"Categoría")|slice:0:10|titlecase}}</span>
+      </div>
+    </div>
+
+    <ion-text class="no-margin">
+      <strong>Tendencias</strong>
+    </ion-text>
+
+    <section class="trends">
+      <app-product [item]="item" *ngFor="let item of trends" type="trend"></app-product>
+    </section>
+
+    <ion-text>
+      <strong>Recientes</strong>
+    </ion-text>
+
+    <section class="recents">
+      <app-product [item]="item" *ngFor="let item of recents" type="product"></app-product>
+    </section>
+  </ng-container>
+
+
+  <ng-container *ngIf="search">
+    <ion-text>
+      <strong>Resultados de '{{search}}'</strong>
+    </ion-text>
+
+    <section class="products">
+      <app-product [item]="item" *ngFor="let item of products" type="product"></app-product>
+    </section>
+  </ng-container>
+</ion-content>

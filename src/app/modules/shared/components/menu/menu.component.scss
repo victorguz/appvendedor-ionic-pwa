@@ -1,0 +1,56 @@
+.menu {
+  padding: 100px var(--section-spacing);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .profile {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      object-fit: cover;
+      border-radius: 200px;
+      width: 80px;
+      height: 80px;
+      margin-bottom: var(--section-spacing);
+    }
+  }
+
+  .option {
+    display: grid;
+    grid-template-columns: 36px auto;
+    align-items: center;
+    gap: var(--default-spacing);
+
+    .circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 1000px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.primary {
+        background-color: var(--primary);
+      }
+      &.secondary {
+        background-color: var(--secondary);
+      }
+      &.warning {
+        background-color: var(--warning);
+      }
+      &.success {
+        background-color: var(--success);
+      }
+      &.light {
+        background-color: var(--light);
+      }
+      &.dark {
+        background-color: var(--dark);
+      }
+    }
+  }
+}

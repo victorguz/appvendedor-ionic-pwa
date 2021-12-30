@@ -1,0 +1,33 @@
+<ion-menu side="start" menuId="option-menu" contentId="main">
+  <ion-content>
+    <section class="menu">
+      <div class="profile">
+        <img src="assets/images/profile.svg" alt="profile">
+        <h2>Fabian Charris</h2>
+        <small>fcharris@jamar.com</small>
+      </div>
+
+      <ion-list class="options">
+        <ion-item *ngFor="let item of options">
+          <div class="option">
+            <div class="circle {{item.color}}">
+              <ion-icon [name]="item.icon!=''?item.icon:'settings'" slot="icon-only" color="light"></ion-icon>
+            </div>
+            <ion-text>{{item.name|titlecase}}</ion-text>
+          </div>
+        </ion-item>
+      </ion-list>
+
+      <ion-item (click)="logOut()">
+        <div class="option">
+          <div class="circle dark">
+            <ion-icon name="arrow-undo" color="light"></ion-icon>
+          </div>
+          <ion-text>Cerrar sesión</ion-text>
+        </div>
+      </ion-item>
+
+    </section>
+
+  </ion-content>
+</ion-menu>

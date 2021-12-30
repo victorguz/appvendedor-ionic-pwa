@@ -1,0 +1,81 @@
+<app-header title="Nuevo cliente" [menu]="false" [notifications]="false" [back]="true" [add]="false" [onBack]="onBack">
+</app-header>
+
+<ion-content [class]="class">
+  <section>
+    <ion-label>Número de documento</ion-label>
+    <ion-item class="w-100">
+      <ion-input placeholder="Número de documento" type="text">
+      </ion-input>
+    </ion-item>
+
+  </section>
+
+  <ion-row class="row-section">
+    <ion-col size="12">
+      <ion-label>Canal de atención</ion-label>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button [color]="canal=='tienda'?'secondary':'medium'" [fill]="canal=='tienda'?'solid':'outline'" size="large"
+        expand="block" (click)="canal = 'tienda'">
+        <ion-icon name="storefront-outline" slot="start"></ion-icon>
+        Tienda
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button [color]="canal=='distancia'?'secondary':'medium'" [fill]="canal=='distancia'?'solid':'outline'"
+        size="large" expand="block" (click)="canal = 'distancia'">
+        <ion-icon name="globe-outline" slot="start"></ion-icon>
+        Distancia
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ng-container *ngIf="canal=='distancia'">
+
+    <ion-row class="row-section">
+      <ion-col size="12">
+        <ion-label>Ubicación</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-select placeholder="Departamento" class="w-100">
+            <ion-select-option [value]="item.cod" *ngFor="let item of departamentos" (ionChange)="loadCities()">
+              {{item.name|titlecase}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-select placeholder="Ciudad" class="w-100">
+            <ion-select-option [value]="item.cod_ciu" *ngFor="let item of selectedCities">{{item.name|titlecase}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <section>
+      <ion-item>
+        <ion-select placeholder="Agencia" class="w-100">
+          <ion-select-option [value]="item.cod_ciu" *ngFor="let item of agencias">{{item.name|titlecase}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </section>
+  </ng-container>
+
+  <ion-row class="row-section">
+    <ion-col size="6">
+      <ion-button color="secondary" fill="solid" expand="block" size="large">
+        <ion-icon name="eye-outline" slot="start"></ion-icon>
+        Visor
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="primary" fill="solid" expand="block" size="large" routerLink="/admin/products">Continuar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,96 @@
+ion-toolbar {
+
+  // padding: 0 var(--default-spacing) 0 var(--default-spacing);
+  --padding-start: 0;
+  --padding-end: 0;
+
+  ion-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto;
+
+
+
+    ion-button {
+      --padding-start: var(--default-spacing);
+      --padding-end: var(--default-spacing);
+
+      &:first-child {
+        margin-left: var(--section-spacing);
+      }
+
+      &:last-child {
+        margin-right: var(--section-spacing);
+      }
+    }
+  }
+}
+
+ion-item-sliding {
+  margin-bottom: 0;
+
+  ion-item {
+    .item {
+      display: grid;
+      grid-template-columns: 40px auto 20px;
+      align-items: center;
+      gap: var(--default-spacing);
+      width: 100%;
+      padding: 0 var(--section-spacing);
+      height: var(--field-size);
+
+      .circle {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 16px;
+        font-weight: 400;
+        color: black;
+        line-height: 1em;
+
+        background-color: rgba($color: red, $alpha: 0.3);
+        border-radius: 1000px;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        .name {
+          font-weight: 500;
+          font-size: 16px;
+        }
+
+        .description {
+          font-size: 12px !important;
+          font-weight: 400;
+        }
+
+      }
+
+      .count {
+        width: 20px;
+        height: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 9px;
+        font-weight: 300;
+        color: white;
+        line-height: 0;
+
+        background-color: var(--secondary);
+        border-radius: 1000px;
+      }
+    }
+  }
+}

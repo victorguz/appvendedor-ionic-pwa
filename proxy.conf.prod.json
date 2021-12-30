@@ -1,0 +1,20 @@
+{
+  "^https://appsprd.mueblesjamar.com.co/*": {
+    "target": "https://appsprd.mueblesjamar.com.co/",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^https://appsprd.mueblesjamar.com.co/*": ""
+    }
+  },
+  "^https://ot92hx6vv3.execute-api.us-east-1.amazonaws.com/prd/*": {
+    "target": "https://ot92hx6vv3.execute-api.us-east-1.amazonaws.com/prd/",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^https://ot92hx6vv3.execute-api.us-east-1.amazonaws.com/prd/*": ""
+    }
+  }
+}

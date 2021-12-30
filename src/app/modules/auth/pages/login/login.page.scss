@@ -1,0 +1,36 @@
+ion-content {
+  .login {
+    background-image: url("/assets/masks/login.svg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--section-spacing);
+
+    .with-background {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 50px;
+      min-height: 50px;
+      max-width: 50px;
+      max-height: 50px;
+      // padding: 5px;
+
+      img {
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .rounded-img {
+      border-radius: 100px;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+  }
+}

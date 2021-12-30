@@ -1,0 +1,20 @@
+{
+  "^https://appsqas.mueblesjamar.com.co/*": {
+    "target": "https://appsqas.mueblesjamar.com.co/",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^https://appsqas.mueblesjamar.com.co/*": ""
+    }
+  },
+  "^https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/*": {
+    "target": "https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^https://hxylqwms9f.execute-api.us-east-1.amazonaws.com/dev/*": ""
+    }
+  }
+}

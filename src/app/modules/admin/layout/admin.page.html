@@ -1,0 +1,30 @@
+<ion-tabs (ionTabsDidChange)="setEnabled(tabs.selectedTab)">
+
+  <ion-tab-bar slot="bottom" #tabs>
+    <!-- <ion-tab-button tab="home">
+      <ion-icon name="home-outline" [color]="enabled=='home'?'secondary':''"></ion-icon>
+      <ion-label *ngIf="enabled=='home'" color="secondary">Home</ion-label>
+    </ion-tab-button> -->
+
+    <ion-tab-button tab="clients">
+      <ion-icon name="people-outline" [color]="enabled=='clients'?'secondary':''"></ion-icon>
+      <ion-label *ngIf="enabled=='clients'" color="secondary">Clientes</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="products">
+      <ion-icon name="storefront-outline" [color]="enabled=='products'?'secondary':''"></ion-icon>
+      <ion-label *ngIf="enabled=='products'" color="secondary">Productos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="cart">
+      <ion-icon name="cart-outline" [color]="enabled=='cart'?'secondary':''"></ion-icon>
+      <ion-label *ngIf="enabled=='cart'" color="secondary">Carrito</ion-label>
+    </ion-tab-button>
+
+    <!-- <ion-tab-button tab="forms">
+      <ion-icon name="create-outline" [color]="enabled=='forms'?'secondary':''"></ion-icon>
+      <ion-label *ngIf="enabled=='forms'" color="secondary">Formularios</ion-label>
+    </ion-tab-button> -->
+  </ion-tab-bar>
+
+</ion-tabs>

@@ -1,0 +1,30 @@
+.bottom-modal {
+  --height: fit-content;
+  --min-height: 50vh;
+  --max-height: 50vh;
+  --border-radius: var(--default-radius) var(--default-radius) 0px 0px;
+
+  .modal-wrapper {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+  }
+}
+
+.center-modal {
+  --height: fit-content;
+  --min-height: 200px;
+  --max-height: 50vh;
+  --width: 90%;
+  --border-radius: var(--default-radius);
+
+  .modal-wrapper {
+    position: fixed;
+    z-index: 10;
+    left: 5%;
+    top: 40%;
+    bottom: auto;
+    right: auto;
+    box-shadow: var(--shadow);
+  }
+}

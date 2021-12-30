@@ -1,0 +1,112 @@
+<!-- productos en tendencia tienen un diseño distinto -->
+<div class="trend" *ngIf="type=='trend'" [ngClass]="{'disabled': !item.totalStock}">
+
+  <div class="top">
+    <div class="image">
+      <img [src]="item.productImage" alt="product" class="product-image">
+      <img [src]="item.categoryImage" alt="category" class="category-image">
+    </div>
+    <div class="product-info">
+      <ion-text class="title" color="dark">
+        <strong>{{item.name|slice:0:50}}{{item.name.length>50?"...":""}}</strong>
+      </ion-text>
+      <ion-text class="id" color="dark">{{item.id}}</ion-text>
+      <ion-text class="stock" color="medium">{{item.totalStock}} disponibles</ion-text>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="prices">
+      <ion-text class="normal" *ngIf="item.normalPrice">{{item.normalPrice|kiloFormater}} Otro medio
+      </ion-text>
+      <ion-text class="promo" *ngIf="item.promoPrice">{{item.promoPrice|kiloFormater}} <ion-text color="secondary">
+          Credijamar</ion-text>
+      </ion-text>
+    </div>
+
+    <ion-button size="small" color="primary" [disabled]="!item.totalStock">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      Añadir
+    </ion-button>
+  </div>
+</div>
+
+<!-- productos recientes y lista normal de productos -->
+
+<div class="product" *ngIf="type=='product'" [ngClass]="{'disabled': !item.totalStock}">
+
+  <div class="top">
+    <div class="image">
+      <img [src]="item.productImage" alt="category" class="product-image">
+      <img [src]="item.categoryImage" alt="category" class="category-image">
+    </div>
+    <div class="options">
+      <div class="product-info">
+        <ion-text class="title" color="dark">
+          <strong>{{item.name|slice:0:50}}{{item.name.length>50?"...":""}}</strong>
+        </ion-text>
+        <div class="details">
+          <ion-text class="id" color="dark">{{item.id}}</ion-text>
+          <ion-text class="stock" color="medium">{{item.totalStock}} disponibles</ion-text>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="prices">
+          <ion-text class="normal" *ngIf="item.normalPrice">{{item.normalPrice|kiloFormater}} Otro medio
+          </ion-text>
+          <ion-text class="promo" *ngIf="item.promoPrice">{{item.promoPrice|kiloFormater}} <ion-text color="secondary">
+              Credijamar</ion-text>
+          </ion-text>
+        </div>
+
+        <ion-button size="small" color="primary" [disabled]="!item.totalStock">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          Añadir
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- los productos del carrito -->
+
+<div class="cart" *ngIf="type=='cart'" [ngClass]="{'disabled': !item.totalStock}">
+  <div class="top">
+    <div class="image">
+      <img [src]="item.productImage" alt="category" class="product-image">
+      <img [src]="item.categoryImage" alt="category" class="category-image">
+    </div>
+    <div class="options">
+      <div class="product-info">
+        <ion-text class="title" color="dark">
+          <strong>{{item.name|slice:0:50}}{{item.name.length>50?"...":""}}</strong>
+        </ion-text>
+        <div class="details">
+          <ion-text class="id" color="dark">{{item.id}}</ion-text>
+          <ion-text class="stock" color="medium">{{item.totalStock}} disponibles</ion-text>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="prices">
+          <ion-text class="normal" *ngIf="item.normalPrice">{{item.normalPrice|kiloFormater}} Otro medio
+          </ion-text>
+          <ion-text class="promo" *ngIf="item.promoPrice">{{item.promoPrice|kiloFormater}} <ion-text color="secondary">
+              Credijamar</ion-text>
+          </ion-text>
+        </div>
+
+        <div class="buttons">
+          <ion-button size="small" color="dark" slot="start" shape="round" fill="clear" [disabled]="!item.totalStock">
+            <ion-icon name="remove-outline"></ion-icon>
+          </ion-button>
+          {{item.selectedQuantity?item.selectedQuantity:0}}
+          <ion-button size="small" color="dark" slot="end" shape="round" fill="clear" [disabled]="!item.totalStock">
+            <ion-icon name="add-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
