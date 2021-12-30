@@ -10,26 +10,13 @@ export const environment = {
   iv: "123456",
   jamaradmin_key: "123456",
   api_key: '123456',
-  
+
   environment: "production",
   adminRoute: "admin",
   authRoute: "auth",
   domain: "",
   domainBasics: "",
-  // domains: {
-  //   STEP_IMAGE_APP_ID: 'https://6kwvv4d820.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   SELLER_APP_ID: 'https://sbeuw1vi17.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   TARJETIZACION_ID: 'https://uoc9e528ik.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   WEB_LOGIC_APP_ID: 'https://ihoffgzow6.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   MEC_EXTENSION_APP_ID: 'https://3xassuir58.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   ORDER_APP_ID: 'https://gm36tm91y3.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   ORDER_REQUEST_ID: 'https://xvjhk5jhn4.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   DIGITURNO_MIDDLEWARE: 'https://ffmph7erj5.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   AGENCIA_TURNO: 'https://1ovflrau72.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   CITA_FUTURA: 'https://uljva3ijt7.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   MEC_EXTENSION_COMVE: 'https://rtsycwvb4g.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  //   MALLAGRAMA_TEMPORAL: 'https://rtsycwvb4g.execute-api.us-east-1.amazonaws.com/api/v1/{{c_emp}}/',
-  // },
+
 
   encryptLocalStorage: false,
   //urls basicas necesarias para el buen funcionamiento del framework
